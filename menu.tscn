@@ -129,6 +129,24 @@ Espace pour tirer.
 R pour recharger.
 Échap pour mettre en pause."
 
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 42
+text = "You play as a soldier during World War II, tasked with shooting down German planes trying to get through.
+
+You have a limited number of lives displayed at the top and ammunition that you must remember to reload frequently.
+
+How to play ?
+
+Press the directional arrows to move the cannon.
+Space to shoot.
+R to reload.
+Esc to pause."
+
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.605327, 0, -2.35276, 0, 1.85505, 0, 1.6503, 0, 0.862991, 11.0406, 7.19397, -7)
 modulate = Color(0.0627451, 0.0627451, 0.0627451, 1)
@@ -162,6 +180,13 @@ size_flags_vertical = 4
 text = "Comment jouer"
 icon_alignment = 1
 
+[node name="Button3_anglais" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "How to play"
+icon_alignment = 1
+
 [node name="Button2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -179,5 +204,6 @@ icon_alignment = 1
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3_anglais" to="." method="_on_button_3_anglais_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button4" to="." method="_on_button_4_pressed"]

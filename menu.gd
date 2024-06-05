@@ -5,6 +5,7 @@ extends Node3D
 func _ready():
 	get_tree().paused = false
 	$RichTextLabel.hide()
+	$RichTextLabel2.hide()
 	$Sprite3D.hide()
 	$VBoxContainer/Button4.hide()
 	$VBoxContainer/Button.show()
@@ -26,18 +27,32 @@ func _on_button_2_pressed():
 
 func _on_button_3_pressed():
 	$RichTextLabel.show()
+	$RichTextLabel2.hide()
 	$Sprite3D.show()
 	$VBoxContainer/Button.hide()
 	$VBoxContainer/Button2.hide()
 	$VBoxContainer/Button3.hide()
+	$VBoxContainer/Button3_anglais.hide()
 	$VBoxContainer/Button4.show()
 	#get_tree().change_scene_to_file("res://tuto.tscn")
 
 
 func _on_button_4_pressed():
 	$RichTextLabel.hide()
+	$RichTextLabel2.hide()
 	$Sprite3D.hide()
 	$VBoxContainer/Button.show()
 	$VBoxContainer/Button2.show()
 	$VBoxContainer/Button3.show()
+	$VBoxContainer/Button3_anglais.show()
 	$VBoxContainer/Button4.hide()
+
+
+func _on_button_3_anglais_pressed():
+	$RichTextLabel2.show()
+	$Sprite3D.show()
+	$VBoxContainer/Button.hide()
+	$VBoxContainer/Button2.hide()
+	$VBoxContainer/Button3.hide()
+	$VBoxContainer/Button3_anglais.hide()
+	$VBoxContainer/Button4.show()
