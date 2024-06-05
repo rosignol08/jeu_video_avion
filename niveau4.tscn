@@ -1,0 +1,86 @@
+[gd_scene load_steps=12 format=3 uid="uid://b7rjvru0fg2bh"]
+
+[ext_resource type="Script" path="res://niveau4.gd" id="1_k88i6"]
+[ext_resource type="PackedScene" uid="uid://idpait1rpnfw" path="res://aa.tscn" id="2_7md2l"]
+[ext_resource type="AudioStream" uid="uid://da7xee7hr3n4g" path="res://son/attack2t22wav-14511.mp3" id="3_61xgp"]
+[ext_resource type="PackedScene" uid="uid://dd572e68e42ho" path="res://ally.tscn" id="5_74uu6"]
+[ext_resource type="PackedScene" uid="uid://cgkwcslx3jru0" path="res://raid_messer.tscn" id="5_mawfa"]
+[ext_resource type="PackedScene" uid="uid://es3k8jquhgr6" path="res://zepelin.tscn" id="7_3qxwd"]
+[ext_resource type="PackedScene" uid="uid://bvl0uyijkstvq" path="res://raid_bomb.tscn" id="7_tky1o"]
+[ext_resource type="PackedScene" uid="uid://bvfgxd4esciwp" path="res://raid_stuka.tscn" id="8_lgbad"]
+[ext_resource type="Texture2D" uid="uid://0atpgroywt8d" path="res://texturess/vie_vide.png" id="9_ote7o"]
+[ext_resource type="Texture2D" uid="uid://bah2l8cdclt8e" path="res://texturess/vie_plein1.png" id="10_h0fm1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jheq5"]
+size = Vector3(0.827883, 143.258, 123.342)
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_k88i6")
+
+[node name="Node3D" parent="." instance=ExtResource("2_7md2l")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_61xgp")
+volume_db = -9.0
+autoplay = true
+
+[node name="Node3D2" parent="." instance=ExtResource("5_74uu6")]
+transform = Transform3D(-4.37114e-08, -0.490904, -0.871214, 0, 0.871214, -0.490904, 1, -2.14581e-08, -3.8082e-08, 21.6944, 5.26619, 0)
+
+[node name="Node3D3" parent="." instance=ExtResource("5_74uu6")]
+transform = Transform3D(-4.37114e-08, -0.490904, -0.871214, 0, 0.871214, -0.490904, 1, -2.14581e-08, -3.8082e-08, 21.6944, 5.26619, -30.0334)
+
+[node name="Node3D4" parent="." instance=ExtResource("5_74uu6")]
+transform = Transform3D(-4.37114e-08, -0.490904, -0.871214, 0, 0.871214, -0.490904, 1, -2.14581e-08, -3.8082e-08, 21.6944, 5.26619, 32.0343)
+
+[node name="Node3D5" parent="." instance=ExtResource("5_74uu6")]
+transform = Transform3D(-4.37114e-08, -0.490904, -0.871214, 0, 0.871214, -0.490904, 1, -2.14581e-08, -3.8082e-08, 4.30766, 5.26619, 19.9674)
+
+[node name="Node3D6" parent="." instance=ExtResource("5_74uu6")]
+transform = Transform3D(-4.37114e-08, -0.490904, -0.871214, 0, 0.871214, -0.490904, 1, -2.14581e-08, -3.8082e-08, 1.30766, 5.26619, -28.1238)
+
+[node name="zepelin" parent="." instance=ExtResource("7_3qxwd")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 215.365, 54.2784, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.3689, 37.6785, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.56841, 34.7481, 0)
+shape = SubResource("BoxShape3D_jheq5")
+
+[node name="Area3D2" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.178, 37.6785, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.56841, 34.7481, 0)
+shape = SubResource("BoxShape3D_jheq5")
+
+[node name="raid_messer" parent="." instance=ExtResource("5_mawfa")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 141.328, 51.4335, 0)
+
+[node name="raid_stuka" parent="." instance=ExtResource("8_lgbad")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 294.192, 47.3146, 0)
+
+[node name="raid_bomb" parent="." instance=ExtResource("7_tky1o")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 356.847, 45.5687, 0)
+
+[node name="raid_bomb2" parent="." instance=ExtResource("7_tky1o")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 460.815, 45.5687, 0)
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_right = 400.0
+offset_bottom = 40.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+max_value = 5.0
+value = 5.0
+nine_patch_stretch = true
+texture_over = ExtResource("9_ote7o")
+texture_progress = ExtResource("10_h0fm1")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="child_exiting_tree" from="raid_messer" to="." method="_on_raid_messer_child_exiting_tree"]
+[connection signal="child_exiting_tree" from="raid_stuka" to="." method="_on_raid_stuka_child_exiting_tree"]
+[connection signal="child_exiting_tree" from="raid_bomb" to="." method="_on_raid_bomb_child_exiting_tree"]
+[connection signal="child_exiting_tree" from="raid_bomb2" to="." method="_on_raid_bomb_2_child_exiting_tree"]

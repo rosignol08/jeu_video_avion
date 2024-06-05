@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://i7y8ar6obwd2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1jltg"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.980392, 0.556863, 0.415686, 1)
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_rg2rx"]
+colors = PackedColorArray(0, 0, 0, 1, 0.733166, 0.383489, 0.223308, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3tc46"]
+gradient = SubResource("Gradient_rg2rx")
+
+[sub_resource type="Curve" id="Curve_rs8qe"]
+_data = [Vector2(0, 0.136364), 0.0, 0.0, 0, 0, Vector2(0.446429, 0.863636), 0.0, 0.0, 0, 0, Vector2(1, 0.209091), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_d68o0"]
+curve = SubResource("Curve_rs8qe")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7oirv"]
+direction = Vector3(0, -1, 0)
+spread = 24.37
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 10.42
+angular_velocity_max = 40.0
+linear_accel_min = -10.42
+linear_accel_max = 10.42
+angle_max = 300.0
+scale_max = 8.15
+scale_curve = SubResource("CurveTexture_d68o0")
+color_initial_ramp = SubResource("GradientTexture1D_3tc46")
+
+[sub_resource type="QuadMesh" id="QuadMesh_lhfax"]
+size = Vector2(0.5, 0.5)
+
+[node name="petit_feu" type="Node3D"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+material_override = SubResource("StandardMaterial3D_1jltg")
+amount = 19
+lifetime = 1.79
+randomness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_7oirv")
+draw_pass_1 = SubResource("QuadMesh_lhfax")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(0.988235, 0.776471, 0.67451, 1)
+light_energy = 16.0
+light_indirect_energy = 16.0
+omni_range = 26.0

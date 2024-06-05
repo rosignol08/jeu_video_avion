@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=3 uid="uid://bcdxfmhka02g8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_730vl"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.827451, 0.321569, 0.133333, 1)
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_uco8a"]
+offsets = PackedFloat32Array(0, 0.883212)
+colors = PackedColorArray(0, 0, 0, 1, 0.677081, 0.205114, 0.140134, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_c1hri"]
+gradient = SubResource("Gradient_uco8a")
+
+[sub_resource type="Curve" id="Curve_yquc7"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.416667, 0.972727), 0.0, 0.0, 0, 0, Vector2(1, 0.572727), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_a204y"]
+curve = SubResource("Curve_yquc7")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7x2y2"]
+direction = Vector3(0, 1, 0)
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 4.0
+angular_velocity_max = 40.0
+linear_accel_min = 1.0
+linear_accel_max = 5.0
+angle_max = 300.0
+scale_min = 0.05
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_a204y")
+color_initial_ramp = SubResource("GradientTexture1D_c1hri")
+turbulence_noise_strength = 0.1
+turbulence_noise_scale = 0.1
+
+[sub_resource type="QuadMesh" id="QuadMesh_hbupc"]
+
+[node name="feu" type="Node3D"]
+
+[node name="Static_flame" type="GPUParticles3D" parent="."]
+material_override = SubResource("StandardMaterial3D_730vl")
+amount = 500
+lifetime = 0.3
+randomness = 1.0
+fixed_fps = 60
+draw_order = 3
+process_material = SubResource("ParticleProcessMaterial_7x2y2")
+draw_pass_1 = SubResource("QuadMesh_hbupc")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(1, 0.878431, 0.556863, 1)
+light_energy = 0.645
+shadow_enabled = true

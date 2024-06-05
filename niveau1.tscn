@@ -1,0 +1,108 @@
+[gd_scene load_steps=9 format=3 uid="uid://dbbasefks81yv"]
+
+[ext_resource type="PackedScene" uid="uid://idpait1rpnfw" path="res://aa.tscn" id="1_ciqpg"]
+[ext_resource type="Script" path="res://niveau1.gd" id="1_h0v2m"]
+[ext_resource type="PackedScene" uid="uid://bvl0uyijkstvq" path="res://raid_bomb.tscn" id="2_7tdg8"]
+[ext_resource type="AudioStream" uid="uid://da7xee7hr3n4g" path="res://son/attack2t22wav-14511.mp3" id="3_xbckp"]
+[ext_resource type="PackedScene" uid="uid://dd572e68e42ho" path="res://ally.tscn" id="4_feyhc"]
+[ext_resource type="Texture2D" uid="uid://0atpgroywt8d" path="res://texturess/vie_vide.png" id="7_hucy1"]
+[ext_resource type="Texture2D" uid="uid://bah2l8cdclt8e" path="res://texturess/vie_plein1.png" id="7_upckb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iexdp"]
+size = Vector3(0.827883, 143.258, 123.342)
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_h0v2m")
+
+[node name="Node3D" parent="." instance=ExtResource("1_ciqpg")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_xbckp")
+volume_db = -9.0
+autoplay = true
+
+[node name="Node3D2" parent="." instance=ExtResource("4_feyhc")]
+transform = Transform3D(0.129678, -0.498773, -0.856977, 0, 0.864275, -0.50302, 0.991556, 0.0652307, 0.112078, -4.18021, 5.40891, -26.2933)
+
+[node name="Node3D10" parent="." instance=ExtResource("4_feyhc")]
+transform = Transform3D(0.129678, -0.498773, -0.856977, 0, 0.864275, -0.50302, 0.991556, 0.0652307, 0.112078, 2.12862, 5.40891, -25.0594)
+
+[node name="Node3D11" parent="." instance=ExtResource("4_feyhc")]
+transform = Transform3D(-4.37114e-08, -0.50302, -0.864275, 0, 0.864275, -0.50302, 1, -2.19877e-08, -3.77787e-08, -4.63023, 5.40891, 22.3454)
+
+[node name="Node3D3" parent="." instance=ExtResource("4_feyhc")]
+transform = Transform3D(-4.37114e-08, -0.50302, -0.864275, 0, 0.864275, -0.50302, 1, -2.19877e-08, -3.77787e-08, -3.88207, 5.40891, 16.3901)
+
+[node name="Node3D4" parent="." instance=ExtResource("4_feyhc")]
+transform = Transform3D(0.129678, -0.498773, -0.856977, 0, 0.864275, -0.50302, 0.991556, 0.0652307, 0.112078, 1.52292, 5.40891, -21.3555)
+
+[node name="Node3D5" parent="." instance=ExtResource("4_feyhc")]
+transform = Transform3D(-4.37114e-08, -0.50302, -0.864275, 0, 0.864275, -0.50302, 1, -2.19877e-08, -3.77787e-08, -5.04742, 4.50264, 25.2808)
+
+[node name="Node3D6" parent="." instance=ExtResource("4_feyhc")]
+transform = Transform3D(-4.37114e-08, -0.50302, -0.864275, 0, 0.864275, -0.50302, 1, -2.19877e-08, -3.77787e-08, 13.2541, 5.40891, -9.14336)
+
+[node name="Node3D7" parent="." instance=ExtResource("4_feyhc")]
+transform = Transform3D(-4.37114e-08, -0.50302, -0.864275, 0, 0.864275, -0.50302, 1, -2.19877e-08, -3.77787e-08, 27.5436, 5.40891, 6.39605)
+
+[node name="Node3D8" parent="." instance=ExtResource("4_feyhc")]
+transform = Transform3D(-4.37114e-08, -0.50302, -0.864275, 0, 0.864275, -0.50302, 1, -2.19877e-08, -3.77787e-08, 33.1715, 5.40891, -6.6035)
+
+[node name="Node3D9" parent="." instance=ExtResource("4_feyhc")]
+transform = Transform3D(-4.37114e-08, -0.50302, -0.864275, 0, 0.864275, -0.50302, 1, -2.19877e-08, -3.77787e-08, 22.7042, 5.40891, 25.2808)
+
+[node name="Node3D12" parent="." instance=ExtResource("4_feyhc")]
+transform = Transform3D(-4.37114e-08, -0.50302, -0.864275, 0, 0.864275, -0.50302, 1, -2.19877e-08, -3.77787e-08, 22.7042, 5.40891, -32.0642)
+
+[node name="Node3D13" parent="." instance=ExtResource("4_feyhc")]
+transform = Transform3D(0.129678, -0.498773, -0.856977, 0, 0.864275, -0.50302, 0.991556, 0.0652307, 0.112078, 6.26543, 5.40891, -33.4512)
+
+[node name="Node3D14" parent="." instance=ExtResource("4_feyhc")]
+transform = Transform3D(0.129678, -0.498773, -0.856977, 0, 0.864275, -0.50302, 0.991556, 0.0652307, 0.112078, 1.30291, 5.40891, -35.1354)
+
+[node name="Node3D15" parent="." instance=ExtResource("4_feyhc")]
+transform = Transform3D(-4.37114e-08, -0.50302, -0.864275, 0, 0.864275, -0.50302, 1, -2.19877e-08, -3.77787e-08, 4.25384, 5.40891, 22.6014)
+
+[node name="Node3D16" parent="." instance=ExtResource("4_feyhc")]
+transform = Transform3D(-4.37114e-08, -0.50302, -0.864275, 0, 0.864275, -0.50302, 1, -2.19877e-08, -3.77787e-08, 16.9783, 5.40891, 15.8263)
+
+[node name="Node3D17" parent="." instance=ExtResource("4_feyhc")]
+transform = Transform3D(-4.37114e-08, -0.50302, -0.864275, 0, 0.864275, -0.50302, 1, -2.19877e-08, -3.77787e-08, 21.5358, 5.40891, -7.43561)
+
+[node name="Node3D18" parent="." instance=ExtResource("4_feyhc")]
+transform = Transform3D(-4.37114e-08, -0.50302, -0.864275, 0, 0.864275, -0.50302, 1, -2.19877e-08, -3.77787e-08, 18.5298, 5.40891, -19.9508)
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.56841, 34.7481, 0)
+shape = SubResource("BoxShape3D_iexdp")
+
+[node name="Area3D2" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.0337, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.56841, 34.7481, 0)
+shape = SubResource("BoxShape3D_iexdp")
+
+[node name="raid_bomb" parent="." instance=ExtResource("2_7tdg8")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 82.6203, 79.6349, 0)
+
+[node name="raid_bomb2" parent="." instance=ExtResource("2_7tdg8")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 265.807, 79.6349, 0)
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_right = 400.0
+offset_bottom = 40.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+max_value = 5.0
+value = 5.0
+nine_patch_stretch = true
+texture_over = ExtResource("7_hucy1")
+texture_progress = ExtResource("7_upckb")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="child_exiting_tree" from="raid_bomb" to="." method="_on_raid_bomb_child_exiting_tree"]
+[connection signal="child_exiting_tree" from="raid_bomb2" to="." method="_on_raid_bomb_2_child_exiting_tree"]

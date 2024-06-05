@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvfgxd4esciwp"]
+
+[ext_resource type="PackedScene" uid="uid://bhtc5f8007x0m" path="res://scene_stuka.tscn" id="1_7f3ir"]
+[ext_resource type="Script" path="res://raid_stuka.gd" id="1_i60ax"]
+
+[node name="raid_stuka" type="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+script = ExtResource("1_i60ax")
+
+[node name="scene_stuka" parent="." instance=ExtResource("1_7f3ir")]
+
+[node name="scene_stuka2" parent="." instance=ExtResource("1_7f3ir")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.1719, 0, -14.0818)
+
+[node name="scene_stuka3" parent="." instance=ExtResource("1_7f3ir")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.4684, 0, -13.464)
+
+[node name="scene_stuka4" parent="." instance=ExtResource("1_7f3ir")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8903, 0, -25.5333)
+
+[node name="scene_stuka5" parent="." instance=ExtResource("1_7f3ir")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.49072, 0, -6.03177)
+
+[node name="scene_stuka6" parent="." instance=ExtResource("1_7f3ir")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.75463, 0, -6.21458)
+
+[node name="scene_stuka7" parent="." instance=ExtResource("1_7f3ir")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.214, 0, -25.7705)
+
+[node name="scene_stuka8" parent="." instance=ExtResource("1_7f3ir")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.6249, 1.90735e-06, -19.7983)
+
+[node name="scene_stuka9" parent="." instance=ExtResource("1_7f3ir")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.1107, 1.90735e-06, -18.5549)

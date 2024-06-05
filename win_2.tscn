@@ -1,0 +1,69 @@
+[gd_scene load_steps=4 format=3 uid="uid://ds1y5em0vucmv"]
+
+[ext_resource type="Script" path="res://win_2.gd" id="1_weemd"]
+[ext_resource type="Texture2D" uid="uid://d3pcjq2rl4e65" path="res://texturess/stuka_casse.jpg" id="2_q48ah"]
+[ext_resource type="AudioStream" uid="uid://bx6letn4sei04" path="res://son/feu_zepelin.mp3" id="3_aabfu"]
+
+[node name="win_2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_weemd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(640, 400)
+scale = Vector2(2.05128, 1.67715)
+texture = ExtResource("2_q48ah")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -131.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Félicitations, vous avez repoussé les avions ennemis."
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+focus_next = NodePath("../Button3")
+focus_previous = NodePath("../Button2")
+text = "Niveau suivant"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+focus_next = NodePath("../Button")
+focus_previous = NodePath("../Button3")
+text = "Recommencer ?"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+focus_next = NodePath("../Button2")
+focus_previous = NodePath("../Button")
+text = "Retour au menu"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_aabfu")
+volume_db = -3.0
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

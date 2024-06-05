@@ -1,0 +1,251 @@
+[gd_scene load_steps=14 format=3 uid="uid://es3k8jquhgr6"]
+
+[ext_resource type="Script" path="res://zepelin.gd" id="1_1rp0r"]
+[ext_resource type="PackedScene" uid="uid://d4kdyfmgiy4vn" path="res://3d_plane/l30_airship/scene.gltf" id="2_nh5oj"]
+[ext_resource type="PackedScene" uid="uid://i7y8ar6obwd2" path="res://petit_feu.tscn" id="2_rigw7"]
+[ext_resource type="AudioStream" uid="uid://dpqomo30g31t4" path="res://son/Makai Symphony - Dragon Castle.mp3" id="3_06iti"]
+[ext_resource type="AudioStream" uid="uid://ciy1urp4xnxd" path="res://son/klackson.mp3" id="4_qff3f"]
+[ext_resource type="AudioStream" uid="uid://ul2j1f3fa3h4" path="res://son/degats_zepelin.mp3" id="5_3oe1y"]
+[ext_resource type="AudioStream" uid="uid://bx6letn4sei04" path="res://son/feu_zepelin.mp3" id="7_o5jh3"]
+[ext_resource type="AudioStream" uid="uid://cg67sa7qpergp" path="res://son/Explosion Sound Effect - Mister Sound.mp3" id="8_f35iv"]
+[ext_resource type="PackedScene" uid="uid://dtxwjlu60mvpi" path="res://explosionG.tscn" id="9_l6gfm"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5lyif"]
+radius = 9.27637
+height = 131.9
+
+[sub_resource type="Animation" id="Animation_8jkmh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer4:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer5:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-18.726, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:position:z")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:rotation:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.280736, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:rotation:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1.5708, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:rotation:z")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1.04383e-06, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_8idr3"]
+resource_name = "mort"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer4:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer5:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(35, -0.25, 0, 0.25, 0, 26, -0.25, 0, 0.25, 0, -26.9429, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.5, 5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:position:z")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.5, 5)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:rotation:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.342661, -0.25, 0, 0.25, 0, 0.0226718, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.5, 5)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:rotation:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-1.5708, -0.25, 0, 0.25, 0, -1.5708, -0.25, 0, 0.25, 0, -1.5708, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.5, 5)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:rotation:z")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -1.28951e-06, -0.25, 0, 0.25, 0, -7.55151e-08, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.5, 5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wjagn"]
+_data = {
+"RESET": SubResource("Animation_8jkmh"),
+"mort": SubResource("Animation_8idr3")
+}
+
+[node name="zepelin" type="Node3D"]
+transform = Transform3D(-3.5863e-06, -0.319693, -0.947521, -1.15981e-06, 0.947521, -0.319693, 1, -4.75683e-08, -3.76887e-06, 0, 23.1451, 0)
+script = ExtResource("1_1rp0r")
+
+[node name="petit_feu" parent="." instance=ExtResource("2_rigw7")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.363839, 0.964395, 33.5761)
+
+[node name="petit_feu2" parent="." instance=ExtResource("2_rigw7")]
+transform = Transform3D(1, 0, 3.82137e-15, 3.82137e-15, 4.37114e-08, -1, 0, 1, 4.37114e-08, -6.14666, 3.249, -2.74087)
+
+[node name="petit_feu4" parent="." instance=ExtResource("2_rigw7")]
+transform = Transform3D(1, 0, 3.82137e-15, 3.82137e-15, 4.37114e-08, -1, 0, 1, 4.37114e-08, 0.020594, 3.249, -40.5833)
+
+[node name="petit_feu5" parent="." instance=ExtResource("2_rigw7")]
+transform = Transform3D(0.792747, 0.60955, 2.66443e-08, 3.82137e-15, 4.37114e-08, -1, -0.60955, 0.792747, 3.46521e-08, -11.3365, 18.2256, 3.60507)
+
+[node name="petit_feu6" parent="." instance=ExtResource("2_rigw7")]
+transform = Transform3D(0.426569, 0.904455, 3.9535e-08, 3.82137e-15, 4.37114e-08, -1, -0.904455, 0.426569, 1.86459e-08, -8.5599, 18.2256, 56.2019)
+
+[node name="petit_feu7" parent="." instance=ExtResource("2_rigw7")]
+transform = Transform3D(0.818721, -0.574191, -2.50987e-08, 3.82137e-15, 4.37114e-08, -1, 0.574191, 0.818721, 3.57875e-08, 11.3795, 18.2256, 39.459)
+
+[node name="petit_feu3" parent="." instance=ExtResource("2_rigw7")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 6.38767, 3.24325, -2.74087)
+
+[node name="scene" parent="." instance=ExtResource("2_nh5oj")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_06iti")
+volume_db = -7.0
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 16.7191, 0)
+shape = SubResource("CapsuleShape3D_5lyif")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_qff3f")
+volume_db = 3.0
+autoplay = true
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_3oe1y")
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_o5jh3")
+volume_db = 6.0
+
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_f35iv")
+volume_db = 7.932
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
+libraries = {
+"": SubResource("AnimationLibrary_wjagn")
+}
+
+[node name="explosion" parent="." instance=ExtResource("9_l6gfm")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -8.49387e-05, 18.1928, 23.4638)
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="finished" from="AudioStreamPlayer2" to="." method="_on_audio_stream_player_2_finished"]

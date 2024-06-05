@@ -1,0 +1,75 @@
+[gd_scene load_steps=9 format=3 uid="uid://df5s2c6tsncj7"]
+
+[ext_resource type="PackedScene" uid="uid://idpait1rpnfw" path="res://aa.tscn" id="1_l8utg"]
+[ext_resource type="Script" path="res://niveau2.gd" id="1_lg128"]
+[ext_resource type="PackedScene" uid="uid://bvfgxd4esciwp" path="res://raid_stuka.tscn" id="2_ambsw"]
+[ext_resource type="AudioStream" uid="uid://da7xee7hr3n4g" path="res://son/attack2t22wav-14511.mp3" id="3_4qpcl"]
+[ext_resource type="PackedScene" uid="uid://dd572e68e42ho" path="res://ally.tscn" id="4_mkmoo"]
+[ext_resource type="Texture2D" uid="uid://0atpgroywt8d" path="res://texturess/vie_vide.png" id="6_bt8iu"]
+[ext_resource type="Texture2D" uid="uid://bah2l8cdclt8e" path="res://texturess/vie_plein1.png" id="7_yor10"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wuqnp"]
+size = Vector3(0.827883, 143.258, 123.342)
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_lg128")
+
+[node name="Node3D" parent="." instance=ExtResource("1_l8utg")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_4qpcl")
+volume_db = -9.0
+autoplay = true
+
+[node name="Node3D2" parent="." instance=ExtResource("4_mkmoo")]
+transform = Transform3D(-4.37114e-08, -0.642788, -0.766044, 0, 0.766045, -0.642788, 1, -2.80971e-08, -3.34849e-08, 13.0323, 2.85916, 15.8254)
+
+[node name="Node3D3" parent="." instance=ExtResource("4_mkmoo")]
+transform = Transform3D(-4.37114e-08, -0.642788, -0.766044, 0, 0.766045, -0.642788, 1, -2.80971e-08, -3.34849e-08, 18.0207, 2.85916, 10.1899)
+
+[node name="Node3D4" parent="." instance=ExtResource("4_mkmoo")]
+transform = Transform3D(-4.37114e-08, -0.642788, -0.766044, 0, 0.766045, -0.642788, 1, -2.80971e-08, -3.34849e-08, 19.3763, 2.85916, -3.58211)
+
+[node name="Node3D5" parent="." instance=ExtResource("4_mkmoo")]
+transform = Transform3D(-4.37114e-08, -0.642788, -0.766044, 0, 0.766045, -0.642788, 1, -2.80971e-08, -3.34849e-08, 14.5478, 2.85916, -11.6106)
+
+[node name="Node3D6" parent="." instance=ExtResource("4_mkmoo")]
+transform = Transform3D(-4.37114e-08, -0.642788, -0.766044, 0, 0.766045, -0.642788, 1, -2.80971e-08, -3.34849e-08, 6.97462, 2.85916, -20.1197)
+
+[node name="Node3D7" parent="." instance=ExtResource("4_mkmoo")]
+transform = Transform3D(-4.37114e-08, -0.642788, -0.766044, 0, 0.766045, -0.642788, 1, -2.80971e-08, -3.34849e-08, 4.86232, 2.85916, 20.2883)
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 17.9843, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.56841, 34.7481, 0)
+shape = SubResource("BoxShape3D_wuqnp")
+
+[node name="Area3D2" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.4239, 17.9843, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.56841, 34.7481, 0)
+shape = SubResource("BoxShape3D_wuqnp")
+
+[node name="raid_stuka" parent="." instance=ExtResource("2_ambsw")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 72.3205, 46.5588, 0)
+
+[node name="raid_stuka2" parent="." instance=ExtResource("2_ambsw")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 154.195, 46.5588, 0)
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_right = 400.0
+offset_bottom = 40.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+max_value = 5.0
+value = 5.0
+nine_patch_stretch = true
+texture_over = ExtResource("6_bt8iu")
+texture_progress = ExtResource("7_yor10")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="child_exiting_tree" from="raid_stuka" to="." method="_on_raid_stuka_child_exiting_tree"]
+[connection signal="child_exiting_tree" from="raid_stuka2" to="." method="_on_raid_stuka_2_child_exiting_tree"]

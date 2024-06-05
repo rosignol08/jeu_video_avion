@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://0lkvj0u1ts1j"]
+
+[ext_resource type="Script" path="res://boom.gd" id="1_6ylv3"]
+[ext_resource type="AudioStream" uid="uid://bcf0u5o2asjcy" path="res://son/Big Explosion Distant.mp3" id="2_xp88f"]
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+script = ExtResource("1_6ylv3")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+light_color = Color(0.811765, 0.698039, 0.196078, 1)
+light_energy = 0.0
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_xp88f")
+
+[connection signal="finished" from="AudioStreamPlayer3D" to="." method="_on_audio_stream_player_3d_finished"]

@@ -1,0 +1,212 @@
+[gd_scene load_steps=17 format=3 uid="uid://idpait1rpnfw"]
+
+[ext_resource type="PackedScene" uid="uid://dhjckic7o26tc" path="res://pause.tscn" id="1_i5fxx"]
+[ext_resource type="Script" path="res://aa.gd" id="1_ulhsg"]
+[ext_resource type="PackedScene" uid="uid://dbmw67fn7gj3d" path="res://ant_air.tscn" id="1_v0o4s"]
+[ext_resource type="PackedScene" uid="uid://dhidnsw4letus" path="res://ww2_-_city_scene/scene.gltf" id="2_tfsog"]
+[ext_resource type="PackedScene" uid="uid://df5ojjlnfcnwe" path="res://spot_light_3d.tscn" id="5_hr12i"]
+[ext_resource type="AudioStream" uid="uid://d3nfr4oirikvt" path="res://son/song_artillery.mp3" id="6_bl1nn"]
+[ext_resource type="PackedScene" uid="uid://0lkvj0u1ts1j" path="res://booom.tscn" id="7_0hkya"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_i12jo"]
+sky_top_color = Color(0.403922, 0.435294, 0.466667, 1)
+sky_horizon_color = Color(0.462745, 0.47451, 0.490196, 1)
+sun_angle_max = 128.18
+
+[sub_resource type="Sky" id="Sky_lmaoy"]
+sky_material = SubResource("ProceduralSkyMaterial_i12jo")
+process_mode = 1
+
+[sub_resource type="Environment" id="Environment_ppig8"]
+background_mode = 2
+background_energy_multiplier = 0.76
+sky = SubResource("Sky_lmaoy")
+ambient_light_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.0470588, 0.0588235, 0.0705882, 1)
+fog_density = 0.0362
+volumetric_fog_density = 0.0484
+volumetric_fog_albedo = Color(0, 0, 0, 1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_t6ohg"]
+emission_shape = 3
+emission_box_extents = Vector3(7.171, 8.609, 7.353)
+direction = Vector3(0, -1, 0)
+spread = 7.5
+initial_velocity_max = 3.0
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.0
+
+[sub_resource type="Curve" id="Curve_1wd4q"]
+max_value = 0.1
+_data = [Vector2(0.00531916, 0.0127273), 0.0, 0.0, 0, 0, Vector2(0.335106, 0.02), 0.0422246, 0.0422246, 0, 0, Vector2(1, 0.00818182), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jiuoe"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(0, 0.160784, 0.243137, 1)
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+use_particle_trails = true
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_ix32j"]
+material = SubResource("StandardMaterial3D_jiuoe")
+size = 0.256
+curve = SubResource("Curve_1wd4q")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y2lj3"]
+size = Vector3(3.25949, 5.1584, 2.54818)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_anti7"]
+size = Vector3(4.92701, 5.79743, 2.1287)
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_ulhsg")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="pause" parent="CanvasLayer" instance=ExtResource("1_i5fxx")]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Camera3D" parent="." instance=ExtResource("1_v0o4s")]
+transform = Transform3D(0.00519119, -0.593079, -0.805128, 0.00257423, 0.805144, -0.593074, 0.999983, 0.00100618, 0.00570638, -4.98593, 4.877, -4.07072)
+
+[node name="scene" parent="." instance=ExtResource("2_tfsog")]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ppig8")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.96609, 6.86538, -4.64285)
+light_color = Color(0.87451, 0.819608, 0.360784, 1)
+light_energy = 2.486
+shadow_enabled = true
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0776, 4.98207, -3.68181)
+light_color = Color(0.87451, 0.819608, 0.360784, 1)
+light_energy = 2.486
+shadow_enabled = true
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.22418, 4.98207, 2.21139)
+light_color = Color(0.87451, 0.819608, 0.360784, 1)
+light_energy = 2.486
+shadow_enabled = true
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.41519, 7.04997, -11.783)
+light_color = Color(0.811765, 0.843137, 0.172549, 1)
+light_energy = 1.755
+
+[node name="SpotLight3D2" parent="." instance=ExtResource("5_hr12i")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 44.1716, 8.99599, -8.31624)
+
+[node name="SpotLight3D3" parent="." instance=ExtResource("5_hr12i")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 30.6259, 7.38294, 6.57423)
+
+[node name="SpotLight3D4" parent="." instance=ExtResource("5_hr12i")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 31.0953, 8.83427, -22.3076)
+
+[node name="SpotLight3D5" parent="." instance=ExtResource("5_hr12i")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 44.1716, 8.99599, 6.12834)
+
+[node name="SpotLight3D6" parent="." instance=ExtResource("5_hr12i")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 30.6259, 7.38294, 22.4802)
+
+[node name="SpotLight3D7" parent="." instance=ExtResource("5_hr12i")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 31.0953, 8.83427, -6.40163)
+
+[node name="SpotLight3D8" parent="." instance=ExtResource("5_hr12i")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 70.2616, 8.99599, -8.31624)
+
+[node name="SpotLight3D9" parent="." instance=ExtResource("5_hr12i")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 56.7158, 7.38294, 6.57423)
+
+[node name="SpotLight3D10" parent="." instance=ExtResource("5_hr12i")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 57.1853, 8.83427, -22.3076)
+
+[node name="SpotLight3D11" parent="." instance=ExtResource("5_hr12i")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 70.2616, 8.99599, 6.12834)
+
+[node name="SpotLight3D12" parent="." instance=ExtResource("5_hr12i")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 56.7158, 7.38294, 22.4802)
+
+[node name="SpotLight3D13" parent="." instance=ExtResource("5_hr12i")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 57.1853, 8.83427, -6.40163)
+
+[node name="SpotLight3D14" parent="." instance=ExtResource("5_hr12i")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 94.6859, 8.99599, -8.31624)
+
+[node name="SpotLight3D15" parent="." instance=ExtResource("5_hr12i")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 81.1402, 7.38294, 6.57423)
+
+[node name="SpotLight3D16" parent="." instance=ExtResource("5_hr12i")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 81.6097, 8.83427, -22.3076)
+
+[node name="SpotLight3D17" parent="." instance=ExtResource("5_hr12i")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 94.6859, 8.99599, 6.12834)
+
+[node name="SpotLight3D18" parent="." instance=ExtResource("5_hr12i")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 81.1402, 7.38294, 22.4802)
+
+[node name="SpotLight3D19" parent="." instance=ExtResource("5_hr12i")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 81.6097, 8.83427, -6.40163)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_bl1nn")
+volume_db = -3.0
+autoplay = true
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7703, 8.4053, -4.84718)
+amount = 200
+lifetime = 1.68
+speed_scale = 4.02
+randomness = 0.44
+fixed_fps = 60
+visibility_aabb = AABB(-7.50267, -5.46779, -8.16774, 15.0053, 10.9356, 16.3355)
+trail_enabled = true
+trail_lifetime = 0.12
+process_material = SubResource("ParticleProcessMaterial_t6ohg")
+draw_pass_1 = SubResource("RibbonTrailMesh_ix32j")
+
+[node name="Node3D" parent="." instance=ExtResource("7_0hkya")]
+transform = Transform3D(-0.903025, 2.40623, -1.54744, 1.21278, 1.79166, 2.07825, 2.59108, 0, -1.51205, -1.15389, 7.90444, -11.8739)
+
+[node name="Node3D2" parent="." instance=ExtResource("7_0hkya")]
+transform = Transform3D(2.47445, 0, -1.6962, 0.587166, 2.81452, 0.856572, 1.59133, -1.0385, 2.32147, -1.97562, 6.64932, 7.1838)
+
+[node name="Node3D3" parent="." instance=ExtResource("7_0hkya")]
+transform = Transform3D(2.13622, 1.88093, -0.947989, -0.0888526, 1.42947, 2.63604, 2.10444, -1.84898, 1.0736, 1.06797, 11.4511, 0.837961)
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(0.722038, 0, 0.691853, 0, 1, 0, -0.691853, 0, 0.722038, 5.54955, 6.40058, -7.97573)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_y2lj3")
+
+[node name="Area3D2" type="Area3D" parent="."]
+transform = Transform3D(0.980969, 0, -0.194166, 0, 1, 0, 0.194166, 0, 0.980969, -0.403039, 5.35282, 7.39107)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
+transform = Transform3D(-0.00760946, 0, 0.99997, 0, 1, 0, -0.99997, 0, -0.00760946, 2.33564, -0.0810699, 0.2)
+shape = SubResource("BoxShape3D_anti7")
+
+[node name="Area3D3" type="Area3D" parent="."]
+transform = Transform3D(0.906463, 0, -0.422286, 0, 1, 0, 0.422286, 0, 0.906463, 6.16485, 6.95799, -3.1289)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D3"]
+transform = Transform3D(-0.00760946, 0, 0.99997, 0, 1, 0, -0.99997, 0, -0.00760946, 2.33564, -0.0810699, 0.2)
+shape = SubResource("BoxShape3D_anti7")

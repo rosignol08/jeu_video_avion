@@ -1,0 +1,264 @@
+[gd_scene load_steps=21 format=3 uid="uid://dbmw67fn7gj3d"]
+
+[ext_resource type="Script" path="res://Camera3D.gd" id="1_n0a3a"]
+[ext_resource type="Texture2D" uid="uid://dap704k782jbf" path="res://ww2_-_city_scene/viseur.png" id="2_0cf01"]
+[ext_resource type="AudioStream" uid="uid://dbnuvanvpttew" path="res://son/tir.wav" id="3_cwmoa"]
+[ext_resource type="AudioStream" uid="uid://bmtkfiy05xnnf" path="res://son/empty-gun-shot-6209.mp3" id="4_3y2pu"]
+[ext_resource type="AudioStream" uid="uid://f1vk6qogcaqe" path="res://son/rechargement.wav" id="5_e2jiu"]
+[ext_resource type="Texture2D" uid="uid://bk1fsssidu73p" path="res://texturess/dented-metal-bl/dented-metal_albedo.png" id="5_r1kmx"]
+[ext_resource type="Texture2D" uid="uid://d4hg3a8uqtnx3" path="res://texturess/dented-metal-bl/dented-metal_ao.png" id="6_g2px7"]
+[ext_resource type="Texture2D" uid="uid://bvr8e5sw4eimn" path="res://texturess/dented-metal-bl/dented-metal_height.png" id="7_qw541"]
+[ext_resource type="Texture2D" uid="uid://ce0fxeehukt14" path="res://texturess/dented-metal-bl/dented-metal_metallic.png" id="8_e1xkf"]
+[ext_resource type="Texture2D" uid="uid://dn6n1quwtj7mn" path="res://texturess/dented-metal-bl/dented-metal_normal-ogl.png" id="9_o125q"]
+[ext_resource type="Texture2D" uid="uid://by0p7eel8uich" path="res://texturess/dented-metal-bl/dented-metal_roughness.png" id="10_8w73a"]
+[ext_resource type="Texture2D" uid="uid://boqx8o6u1jydm" path="res://texturess/box.png" id="12_f6dhh"]
+[ext_resource type="Texture2D" uid="uid://diqjsbsqqersk" path="res://texturess/Sans titre.png" id="13_ktb3t"]
+[ext_resource type="Texture2D" uid="uid://2o3nrunruy4m" path="res://texturess/rechar.png" id="14_c7q6v"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xps32"]
+albedo_texture = ExtResource("5_r1kmx")
+metallic = 0.52
+metallic_texture = ExtResource("8_e1xkf")
+roughness_texture = ExtResource("10_8w73a")
+normal_enabled = true
+normal_texture = ExtResource("9_o125q")
+ao_enabled = true
+ao_texture = ExtResource("6_g2px7")
+heightmap_enabled = true
+heightmap_texture = ExtResource("7_qw541")
+uv1_scale = Vector3(1.998, 3.229, 0.709)
+uv1_offset = Vector3(0, 0.289, 0)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_8jtxa"]
+material = SubResource("StandardMaterial3D_xps32")
+top_radius = 0.199
+bottom_radius = 0.09
+
+[sub_resource type="Animation" id="Animation_svsfw"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.00116205, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.539371, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MeshInstance3D:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1.37696, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_a4fcs"]
+resource_name = "stope"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.00116205, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.545112, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MeshInstance3D:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1.39736, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_aib7o"]
+resource_name = "tir"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("MeshInstance3D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.00116205, -0.25, 0, 0.25, 0, 0.00116205, -0.25, 0, 0.25, 0, 0.00116205, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-0.545112, -0.25, 0, 0.25, 0, -0.581336, -0.25, 0, 0.25, 0, -0.539371, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MeshInstance3D:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-1.39736, -0.25, 0, 0.25, 0, -1.03514, -0.25, 0, 0.25, 0, -1.37696, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_15gq5"]
+_data = {
+"RESET": SubResource("Animation_svsfw"),
+"stope": SubResource("Animation_a4fcs"),
+"tir": SubResource("Animation_aib7o")
+}
+
+[node name="Camera3D" type="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 0.984808, -0.173648, 0, 0.173648, 0.984808, 3.35582, 3.52807, 0)
+fov = 50.0
+script = ExtResource("1_n0a3a")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.18, 0, 0, 0, 0.18, -1.86265e-09, 0, 1.86265e-09, 0.18, 0, -0.0602217, -1.12255)
+shaded = true
+no_depth_test = true
+texture = ExtResource("2_0cf01")
+
+[node name="AudioStreamPlayer3D_Tir" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_cwmoa")
+volume_db = -13.559
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.297393, -1.38493)
+light_color = Color(0.796078, 0.482353, 0.254902, 1)
+light_energy = 2.962
+shadow_enabled = true
+omni_range = 5.207
+
+[node name="AudioStreamPlayer3D_vide" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_3y2pu")
+
+[node name="AudioStreamPlayer3D_recharge" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_e2jiu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, -0.0202372, 0.399488, 0, -0.399488, -0.0202372, 0.00116205, -0.539371, -1.37696)
+mesh = SubResource("CylinderMesh_8jtxa")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_15gq5")
+}
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0940955, -1.17753)
+light_energy = 6.0
+spot_range = 170.0
+spot_attenuation = 0.225313
+spot_angle = 9.577
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 11.0
+offset_top = -25.0
+offset_right = 198.0
+offset_bottom = 25.0
+grow_vertical = 2
+texture = ExtResource("12_f6dhh")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 24.0
+offset_top = -12.0
+offset_right = 192.0
+offset_bottom = 14.0
+grow_vertical = 2
+size_flags_horizontal = 0
+text = "Munitions restantes : "
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -11.5
+offset_right = 0.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+modulate = Color(1, 1, 1, 0.290196)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 531.0
+offset_top = 292.0
+offset_right = 331.0
+offset_bottom = 572.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.199999, 0.2)
+fill_mode = 4
+texture_under = ExtResource("13_ktb3t")
+texture_progress = ExtResource("14_c7q6v")
+
+[node name="Label3" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "rechargement"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[connection signal="finished" from="AudioStreamPlayer3D_Tir" to="." method="_on_audio_stream_player_3d_tir_finished"]
+[connection signal="finished" from="AudioStreamPlayer3D_recharge" to="." method="_on_audio_stream_player_3d_recharge_finished"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -1,0 +1,183 @@
+[gd_scene load_steps=16 format=3 uid="uid://bbvwdf64lm5h5"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_lxt7y"]
+[ext_resource type="PackedScene" uid="uid://dhidnsw4letus" path="res://ww2_-_city_scene/scene.gltf" id="1_ssh3c"]
+[ext_resource type="PackedScene" uid="uid://bcdxfmhka02g8" path="res://feu.tscn" id="2_653kx"]
+[ext_resource type="AudioStream" uid="uid://d3nfr4oirikvt" path="res://son/song_artillery.mp3" id="3_ibpg8"]
+[ext_resource type="Script" path="res://Camera3D_menu.gd" id="4_it1ql"]
+[ext_resource type="AudioStream" uid="uid://c0bpx6c6xakdl" path="res://son/Dark_is_the_Night.mp3" id="4_ydki1"]
+[ext_resource type="PackedScene" uid="uid://0lkvj0u1ts1j" path="res://booom.tscn" id="7_3hex8"]
+[ext_resource type="Texture2D" uid="uid://rcauhbps1m0d" path="res://texturess/blanc.png" id="8_h2kbu"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lnhbb"]
+
+[sub_resource type="Sky" id="Sky_4lyx6"]
+sky_material = SubResource("ProceduralSkyMaterial_lnhbb")
+
+[sub_resource type="Environment" id="Environment_1qjsk"]
+background_mode = 1
+background_color = Color(0.101961, 0.101961, 0.101961, 1)
+sky = SubResource("Sky_4lyx6")
+ambient_light_source = 3
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0, 0, 0, 1)
+fog_light_energy = 19.1
+fog_density = 0.0736
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0759
+volumetric_fog_albedo = Color(0, 0, 0, 1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wj5km"]
+emission_shape = 3
+emission_box_extents = Vector3(7.171, 8.609, 7.353)
+direction = Vector3(0, -1, 0)
+spread = 7.5
+initial_velocity_max = 3.0
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.0
+
+[sub_resource type="Curve" id="Curve_6pw7i"]
+max_value = 0.1
+_data = [Vector2(0.00531916, 0.0127273), 0.0, 0.0, 0, 0, Vector2(0.335106, 0.02), 0.0422246, 0.0422246, 0, 0, Vector2(1, 0.00818182), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mab8r"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(0, 0.160784, 0.243137, 1)
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+use_particle_trails = true
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_ofijv"]
+material = SubResource("StandardMaterial3D_mab8r")
+size = 0.256
+curve = SubResource("Curve_6pw7i")
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_lxt7y")
+
+[node name="scene" parent="." instance=ExtResource("1_ssh3c")]
+process_priority = 1
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1qjsk")
+
+[node name="feu" parent="." instance=ExtResource("2_653kx")]
+process_priority = 4
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.29416, 6.6543, -8.51469)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.318766, -0.328586, 0.889055, -0.1109, 0.944474, 0.309306, -0.941323, 0, -0.337506, 13.9784, 8.09593, -8.63214)
+fov = 58.4
+script = ExtResource("4_it1ql")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Camera3D"]
+transform = Transform3D(0.932904, -0.318612, -0.167858, 0.355974, 0.88642, 0.295876, 0.0545231, -0.335777, 0.940362, -0.852395, 0.345469, 1.33158)
+light_energy = 2.509
+spot_range = 11.413
+spot_attenuation = 0.138696
+spot_angle = 26.0768
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_priority = 3
+stream = ExtResource("3_ibpg8")
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+process_priority = 3
+stream = ExtResource("4_ydki1")
+autoplay = true
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.36028, 13.3938, -4.84718)
+amount = 295
+lifetime = 1.68
+speed_scale = 4.02
+randomness = 0.44
+fixed_fps = 60
+visibility_aabb = AABB(-7.50267, -5.46779, -8.16774, 15.0053, 10.9356, 16.3355)
+trail_enabled = true
+trail_lifetime = 0.12
+process_material = SubResource("ParticleProcessMaterial_wj5km")
+draw_pass_1 = SubResource("RibbonTrailMesh_ofijv")
+
+[node name="Node3D" parent="." instance=ExtResource("7_3hex8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8418, 4.0068, -9.10493)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 42
+text = "Vous incarnez un soldat pendant la Seconde Guerre mondiale, chargé d'abattre les avions allemands qui essaient de passer.
+
+Vous avez un nombre de vies limité affiché en haut et des munitions que vous devez penser à recharger fréquemment.
+
+Comment jouer ?
+
+Appuyez sur les flèches directionnelles pour faire bouger le canon.
+Espace pour tirer.
+R pour recharger.
+Échap pour mettre en pause."
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.605327, 0, -2.35276, 0, 1.85505, 0, 1.6503, 0, 0.862991, 11.0406, 7.19397, -7)
+modulate = Color(0.0627451, 0.0627451, 0.0627451, 1)
+billboard = 1
+texture = ExtResource("8_h2kbu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.5
+offset_top = -68.0
+offset_right = 64.5
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Démarrer"
+icon_alignment = 1
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Comment jouer"
+icon_alignment = 1
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Quitter le jeu
+"
+icon_alignment = 1
+
+[node name="Button4" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "retour"
+icon_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button4" to="." method="_on_button_4_pressed"]

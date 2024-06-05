@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvl0uyijkstvq"]
+
+[ext_resource type="Script" path="res://raid_bomb.gd" id="1_oj2ht"]
+[ext_resource type="PackedScene" uid="uid://dfjt7atduebjb" path="res://scene_bom.tscn" id="2_88r0f"]
+
+[node name="raid_bomb" type="Node3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("1_oj2ht")
+
+[node name="scene_bom2" parent="." instance=ExtResource("2_88r0f")]
+transform = Transform3D(-6.99382e-10, 0, 0.016, 0, 0.016, 0, -0.016, 0, -6.99382e-10, 9.75451e-07, 0, -22.3157)
+
+[node name="scene_bom3" parent="." instance=ExtResource("2_88r0f")]
+transform = Transform3D(-6.99382e-10, 0, 0.016, 0, 0.016, 0, -0.016, 0, -6.99382e-10, -9.54823e-07, 0, 21.8438)
+
+[node name="scene_bom4" parent="." instance=ExtResource("2_88r0f")]
+transform = Transform3D(-6.99382e-10, 0, 0.016, 0, 0.016, 0, -0.016, 0, -6.99382e-10, -70.9676, 0, -3.10209e-06)
+
+[node name="scene_bom5" parent="." instance=ExtResource("2_88r0f")]
+transform = Transform3D(-6.99382e-10, 0, 0.016, 0, 0.016, 0, -0.016, 0, -6.99382e-10, -49.5119, 0, -37.5632)
+
+[node name="scene_bom6" parent="." instance=ExtResource("2_88r0f")]
+transform = Transform3D(-6.99382e-10, 0, 0.016, 0, 0.016, 0, -0.016, 0, -6.99382e-10, -50.4476, 0, 32.6233)
+
+[node name="scene_bom7" parent="." instance=ExtResource("2_88r0f")]
+transform = Transform3D(-6.99382e-10, 0, 0.016, 0, 0.016, 0, -0.016, 0, -6.99382e-10, -36.0587, 0, -1.57618e-06)
+
+[node name="scene_bom8" parent="." instance=ExtResource("2_88r0f")]
+transform = Transform3D(-6.99382e-10, 0, 0.016, 0, 0.016, 0, -0.016, 0, -6.99382e-10, -36.0587, 0, -68.8483)
+
+[node name="scene_bom9" parent="." instance=ExtResource("2_88r0f")]
+transform = Transform3D(-6.99382e-10, 0, 0.016, 0, 0.016, 0, -0.016, 0, -6.99382e-10, -36.0587, 0, 63.8981)
+
+[node name="scene_bom10" parent="." instance=ExtResource("2_88r0f")]
+transform = Transform3D(-6.99382e-10, 0, 0.016, 0, 0.016, 0, -0.016, 0, -6.99382e-10, -18.2079, 0, -47.2812)
+
+[node name="scene_bom11" parent="." instance=ExtResource("2_88r0f")]
+transform = Transform3D(-6.99382e-10, 0, 0.016, 0, 0.016, 0, -0.016, 0, -6.99382e-10, 15.564, 0, 0)
+
+[node name="scene_bom12" parent="." instance=ExtResource("2_88r0f")]
+transform = Transform3D(-6.99382e-10, 0, 0.016, 0, 0.016, 0, -0.016, 0, -6.99382e-10, -17.7583, -1.90735e-06, 45.7372)

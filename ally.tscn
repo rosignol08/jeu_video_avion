@@ -1,0 +1,61 @@
+[gd_scene load_steps=12 format=3 uid="uid://dd572e68e42ho"]
+
+[ext_resource type="Script" path="res://allié.gd" id="1_ysqe6"]
+[ext_resource type="AudioStream" uid="uid://dbnuvanvpttew" path="res://son/tir.wav" id="2_l2lg0"]
+[ext_resource type="AudioStream" uid="uid://bmtkfiy05xnnf" path="res://son/empty-gun-shot-6209.mp3" id="3_gitom"]
+[ext_resource type="Texture2D" uid="uid://bk1fsssidu73p" path="res://texturess/dented-metal-bl/dented-metal_albedo.png" id="4_kq1ne"]
+[ext_resource type="Texture2D" uid="uid://d4hg3a8uqtnx3" path="res://texturess/dented-metal-bl/dented-metal_ao.png" id="5_0tymy"]
+[ext_resource type="Texture2D" uid="uid://bvr8e5sw4eimn" path="res://texturess/dented-metal-bl/dented-metal_height.png" id="6_0idgr"]
+[ext_resource type="Texture2D" uid="uid://ce0fxeehukt14" path="res://texturess/dented-metal-bl/dented-metal_metallic.png" id="7_srxaq"]
+[ext_resource type="Texture2D" uid="uid://dn6n1quwtj7mn" path="res://texturess/dented-metal-bl/dented-metal_normal-ogl.png" id="8_m12sk"]
+[ext_resource type="Texture2D" uid="uid://by0p7eel8uich" path="res://texturess/dented-metal-bl/dented-metal_roughness.png" id="9_dhgw2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hnjem"]
+albedo_texture = ExtResource("4_kq1ne")
+metallic = 0.52
+metallic_texture = ExtResource("7_srxaq")
+roughness_texture = ExtResource("9_dhgw2")
+normal_enabled = true
+normal_texture = ExtResource("8_m12sk")
+ao_enabled = true
+ao_texture = ExtResource("5_0tymy")
+heightmap_enabled = true
+heightmap_texture = ExtResource("6_0idgr")
+uv1_scale = Vector3(1.998, 3.229, 0.709)
+uv1_offset = Vector3(0, 0.289, 0)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_17ktb"]
+material = SubResource("StandardMaterial3D_hnjem")
+top_radius = 0.199
+bottom_radius = 0.09
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 0.871137, -0.491041, 0, 0.491041, 0.871137, 0, 0, 0)
+script = ExtResource("1_ysqe6")
+
+[node name="AudioStreamPlayer3D_Tir" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_l2lg0")
+volume_db = -14.0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.297393, -1.38493)
+light_color = Color(0.796078, 0.482353, 0.254902, 1)
+light_energy = 2.962
+shadow_enabled = true
+omni_range = 5.207
+
+[node name="AudioStreamPlayer3D_vide" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_gitom")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, -0.0202372, 0.399488, 0, -0.399488, -0.0202372, 0.00116205, -0.539371, -1.37696)
+mesh = SubResource("CylinderMesh_17ktb")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.110111, -0.0194156)
+light_energy = 6.0
+spot_range = 170.0
+spot_attenuation = 0.225313
+spot_angle = 9.577
+
+[connection signal="finished" from="AudioStreamPlayer3D_vide" to="." method="_on_audio_stream_player_3d_vide_finished"]

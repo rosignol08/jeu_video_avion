@@ -1,0 +1,79 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxw8apa22fpx4"]
+
+[ext_resource type="Script" path="res://survie.gd" id="1_qgn77"]
+[ext_resource type="PackedScene" uid="uid://idpait1rpnfw" path="res://aa.tscn" id="2_bun3l"]
+[ext_resource type="PackedScene" uid="uid://dd572e68e42ho" path="res://ally.tscn" id="3_tcr65"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sdyp8"]
+size = Vector3(0.827883, 143.258, 123.342)
+
+[node name="survie" type="Node3D"]
+script = ExtResource("1_qgn77")
+
+[node name="Node3D" parent="." instance=ExtResource("2_bun3l")]
+
+[node name="Node3D2" parent="." instance=ExtResource("3_tcr65")]
+transform = Transform3D(-4.37114e-08, -0.573577, -0.819152, 0, 0.819152, -0.573577, 1, -2.50718e-08, -3.58063e-08, 10.4529, 0, -18.3675)
+
+[node name="Node3D14" parent="." instance=ExtResource("3_tcr65")]
+transform = Transform3D(-4.37114e-08, -0.573577, -0.819152, 0, 0.819152, -0.573577, 1, -2.50718e-08, -3.58063e-08, 27.3066, 0, -18.3675)
+
+[node name="Node3D15" parent="." instance=ExtResource("3_tcr65")]
+transform = Transform3D(-4.37114e-08, -0.573577, -0.819152, 0, 0.819152, -0.573577, 1, -2.50718e-08, -3.58063e-08, 27.3066, 0, -9.76512)
+
+[node name="Node3D16" parent="." instance=ExtResource("3_tcr65")]
+transform = Transform3D(-4.37114e-08, -0.573577, -0.819152, 0, 0.819152, -0.573577, 1, -2.50718e-08, -3.58063e-08, 27.3066, 0, 8.62435)
+
+[node name="Node3D17" parent="." instance=ExtResource("3_tcr65")]
+transform = Transform3D(-4.37114e-08, -0.573577, -0.819152, 0, 0.819152, -0.573577, 1, -2.50718e-08, -3.58063e-08, 27.3066, 0, 21.1703)
+
+[node name="Node3D3" parent="." instance=ExtResource("3_tcr65")]
+transform = Transform3D(-4.37114e-08, -0.573577, -0.819152, 0, 0.819152, -0.573577, 1, -2.50718e-08, -3.58063e-08, 0, 0, 19.5559)
+
+[node name="Node3D4" parent="." instance=ExtResource("3_tcr65")]
+transform = Transform3D(-4.37114e-08, -0.573577, -0.819152, 0, 0.819152, -0.573577, 1, -2.50718e-08, -3.58063e-08, 13.9633, 0, 19.5559)
+
+[node name="Node3D5" parent="." instance=ExtResource("3_tcr65")]
+transform = Transform3D(-4.37114e-08, -0.573577, -0.819152, 0, 0.819152, -0.573577, 1, -2.50718e-08, -3.58063e-08, 33.6091, 0, 19.5559)
+
+[node name="Node3D6" parent="." instance=ExtResource("3_tcr65")]
+transform = Transform3D(-4.37114e-08, -0.573577, -0.819152, 0, 0.819152, -0.573577, 1, -2.50718e-08, -3.58063e-08, 33.6091, 0, 4.08043)
+
+[node name="Node3D7" parent="." instance=ExtResource("3_tcr65")]
+transform = Transform3D(-4.37114e-08, -0.573577, -0.819152, 0, 0.819152, -0.573577, 1, -2.50718e-08, -3.58063e-08, 33.6091, 0, -10.2509)
+
+[node name="Node3D8" parent="." instance=ExtResource("3_tcr65")]
+transform = Transform3D(-4.37114e-08, -0.573577, -0.819152, 0, 0.819152, -0.573577, 1, -2.50718e-08, -3.58063e-08, 33.6091, 0, -23.0706)
+
+[node name="Node3D9" parent="." instance=ExtResource("3_tcr65")]
+transform = Transform3D(-4.37114e-08, -0.573577, -0.819152, 0, 0.819152, -0.573577, 1, -2.50718e-08, -3.58063e-08, 16.3437, 0, -23.0706)
+
+[node name="Node3D10" parent="." instance=ExtResource("3_tcr65")]
+transform = Transform3D(-4.37114e-08, -0.573577, -0.819152, 0, 0.819152, -0.573577, 1, -2.50718e-08, -3.58063e-08, 16.3437, 0, -14.634)
+
+[node name="Node3D11" parent="." instance=ExtResource("3_tcr65")]
+transform = Transform3D(-4.37114e-08, -0.573577, -0.819152, 0, 0.819152, -0.573577, 1, -2.50718e-08, -3.58063e-08, 20.6786, 0, -6.3593)
+
+[node name="Node3D12" parent="." instance=ExtResource("3_tcr65")]
+transform = Transform3D(-4.37114e-08, -0.573577, -0.819152, 0, 0.819152, -0.573577, 1, -2.50718e-08, -3.58063e-08, 20.6786, 0, 1.59867)
+
+[node name="Node3D13" parent="." instance=ExtResource("3_tcr65")]
+transform = Transform3D(-4.37114e-08, -0.573577, -0.819152, 0, 0.819152, -0.573577, 1, -2.50718e-08, -3.58063e-08, 20.6786, 0, 11.2601)
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.3689, 37.6785, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.56841, 34.7481, 0)
+shape = SubResource("BoxShape3D_sdyp8")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

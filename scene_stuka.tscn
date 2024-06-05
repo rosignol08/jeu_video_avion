@@ -1,0 +1,198 @@
+[gd_scene load_steps=9 format=3 uid="uid://bhtc5f8007x0m"]
+
+[ext_resource type="PackedScene" uid="uid://htecd57iqpr" path="res://3d_plane/junkers_ju_87_stuka/scene_stuka.gltf" id="1_054b1"]
+[ext_resource type="AudioStream" uid="uid://f6qitopbfdum" path="res://son/song_bomber.mp3" id="2_0mm4t"]
+[ext_resource type="Script" path="res://scene_stuka.gd" id="2_7cetl"]
+[ext_resource type="PackedScene" uid="uid://i7y8ar6obwd2" path="res://petit_feu.tscn" id="3_wgxdl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_carta"]
+transparency = 1
+blend_mode = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_c3p8s"]
+lightmap_size_hint = Vector2i(17, 9)
+material = SubResource("StandardMaterial3D_carta")
+height = 0.022
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_47wnb"]
+radius = 0.724
+height = 4.933
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sblm2"]
+size = Vector3(6, 1, 2)
+
+[node name="scene_stuka" instance=ExtResource("1_054b1")]
+script = ExtResource("2_7cetl")
+
+[node name="Plane003" parent="Sketchfab_model/Root" index="0"]
+transform = Transform3D(1.66169, -1.35182, 4.43118, 4.63051, 0.3368, -1.63369, 0.145483, 4.7205, 1.38553, -3.67004, 2.28581, 0.769989)
+
+[node name="Fuselage005_0" parent="Sketchfab_model/Root/Stuka/Fuselage005" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, -1.49012e-08, 1, 0, 0, 0)
+
+[node name="Wheel004_0" parent="Sketchfab_model/Root/Stuka/Wheel004" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, -1.49012e-08, 1, 0, 0, 0)
+
+[node name="Wheel003_0" parent="Sketchfab_model/Root/Stuka/Wheel003" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, -1.49012e-08, 1, 0, 0, 0)
+
+[node name="Wheel002_0" parent="Sketchfab_model/Root/Stuka/Wheel002" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, -1.49012e-08, 1, 0, 0, 0)
+
+[node name="Bomb004_0" parent="Sketchfab_model/Root/Stuka/Bomb004" index="0"]
+transform = Transform3D(1, 2.32831e-08, 1.49012e-08, -1.02445e-08, 1, 7.45058e-09, 0, 2.23517e-08, 1, 0, 0, 0)
+
+[node name="Bomb003_0" parent="Sketchfab_model/Root/Stuka/Bomb003" index="0"]
+transform = Transform3D(1, 2.32831e-08, 1.49012e-08, -1.02445e-08, 1, 7.45058e-09, 0, 2.23517e-08, 1, 0, 0, 0)
+
+[node name="Bomb002_0" parent="Sketchfab_model/Root/Stuka/Bomb002" index="0"]
+transform = Transform3D(1, -1.02445e-08, -7.45058e-09, -1.02445e-08, 1, 7.45058e-09, 2.23517e-08, -2.23517e-08, 1, 0, 0, 0)
+
+[node name="Bomb001_0" parent="Sketchfab_model/Root/Stuka/Bomb001" index="0"]
+transform = Transform3D(1, -1.02445e-08, -7.45058e-09, -1.02445e-08, 1, 7.45058e-09, 2.23517e-08, -2.23517e-08, 1, 0, 0, 0)
+
+[node name="Bomb_0" parent="Sketchfab_model/Root/Stuka/Bomb" index="0"]
+transform = Transform3D(1, -8.3819e-09, 1.49012e-08, -8.3819e-09, 1, -1.49012e-08, -1.49012e-08, 1.49012e-08, 1, 0, 0, 0)
+
+[node name="BombFork_0" parent="Sketchfab_model/Root/Stuka/BombFork" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 5.96046e-08, 0, -5.96046e-08, 1, 0, 0, 0)
+
+[node name="BombForkHolder_0" parent="Sketchfab_model/Root/Stuka/BombForkHolder" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.49012e-08, 0, 1.49012e-08, 1, 0, 0, 0)
+
+[node name="Antenna_0" parent="Sketchfab_model/Root/Stuka/Antenna" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 0)
+
+[node name="MachineGun" parent="Sketchfab_model/Root/Stuka" index="13"]
+transform = Transform3D(1, 0, 0, 0, 1, 5.96046e-08, 0, -5.96046e-08, 1, 0, -1.19209e-07, 0.11187)
+
+[node name="MachineGun_0" parent="Sketchfab_model/Root/Stuka/MachineGun" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, -1.49012e-08, 1, 0, 0, 0)
+
+[node name="Gear000_0" parent="Sketchfab_model/Root/Stuka/Gear000" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, -1.49012e-08, 1, 0, 0, 0)
+
+[node name="Fuselage002_0" parent="Sketchfab_model/Root/Stuka/Fuselage002" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, -1.49012e-08, 1, 0, 0, 0)
+
+[node name="Fuselage001_0" parent="Sketchfab_model/Root/Stuka/Fuselage001" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, -1.49012e-08, 1, 0, 0, 0)
+
+[node name="Canopy004_0" parent="Sketchfab_model/Root/Stuka/Canopy004" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.49012e-08, 0, 0, 1, 0, 0, 0)
+
+[node name="Canopy001_0" parent="Sketchfab_model/Root/Stuka/Canopy001" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.49012e-08, 0, 0, 1, 0, 0, 0)
+
+[node name="Canopy000_0" parent="Sketchfab_model/Root/Stuka/Canopy000" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.49012e-08, 0, 0, 1, 0, 0, 0)
+
+[node name="Wheel001_0" parent="Sketchfab_model/Root/Stuka/Wheel001" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, -1.49012e-08, 1, 0, 0, 0)
+
+[node name="Wings_0" parent="Sketchfab_model/Root/Stuka/Wings" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, -1.49012e-08, 1, 0, 0, 0)
+
+[node name="StukaMain019_0" parent="Sketchfab_model/Root/Stuka/StukaMain019" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, -1.49012e-08, 1, 0, 0, 0)
+
+[node name="StukaMain018_0" parent="Sketchfab_model/Root/Stuka/StukaMain018" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, -1.49012e-08, 1, 0, 0, 0)
+
+[node name="Fuselage008_0" parent="Sketchfab_model/Root/Stuka/Fuselage008" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, -1.49012e-08, 1, 0, 0, 0)
+
+[node name="Fuselage010_0" parent="Sketchfab_model/Root/Stuka/Fuselage010" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, -1.49012e-08, 1, 0, 0, 0)
+
+[node name="Canopy003_0" parent="Sketchfab_model/Root/Stuka/Canopy003" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.49012e-08, 0, 0, 1, 0, 0, 0)
+
+[node name="Canopy_OpenableFrame001_0" parent="Sketchfab_model/Root/Stuka/Canopy_OpenableFrame001" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 2.98023e-08, 1, 0, 0, 0)
+
+[node name="CanopyFrontFrame001_0" parent="Sketchfab_model/Root/Stuka/CanopyFrontFrame001" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.98023e-08, 0, 0, 1, 0, 0, 0)
+
+[node name="CanopyFront001_0" parent="Sketchfab_model/Root/Stuka/CanopyFront001" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.98023e-08, 0, 0, 1, 0, 0, 0)
+
+[node name="Canopy_Openable001_0" parent="Sketchfab_model/Root/Stuka/Canopy_Openable001" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 2.98023e-08, 1, 0, 0, 0)
+
+[node name="Wheel000_0" parent="Sketchfab_model/Root/Stuka/Wheel000" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, -1.49012e-08, 1, 0, 0, 0)
+
+[node name="Gear005_0" parent="Sketchfab_model/Root/Stuka/Gear005" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, -1.49012e-08, 1, 0, 0, 0)
+
+[node name="Empty001" parent="Sketchfab_model/Root/Stuka" index="35"]
+transform = Transform3D(-0.0101963, 0, -0.999948, 0, 1, 0, 0.999948, 0, -0.0101963, -0.00643, -2.58007, 0.03205)
+
+[node name="Spinner007" parent="Sketchfab_model/Root/Stuka" index="36"]
+transform = Transform3D(-0.690024, 0, 0.738993, 0, 1.02948, -2.23517e-08, -0.738993, 0, -0.690024, -0.0957038, -2.57168, 0.03891)
+
+[node name="Spinner007_0" parent="Sketchfab_model/Root/Stuka/Spinner007" index="0"]
+transform = Transform3D(1, -2.98023e-08, 7.82311e-08, 8.19564e-08, 1, -5.96046e-08, 6.51926e-09, 3.72529e-08, 1, -0.0766191, 0.0174792, 0.0657067)
+
+[node name="Spinner007_1" parent="Sketchfab_model/Root/Stuka/Spinner007" index="1"]
+transform = Transform3D(1, -2.98023e-08, -2.79397e-09, 8.9407e-08, 1, -4.47035e-08, -3.44589e-08, 0, 1, -0.0766191, 0.0174792, 0.0657068)
+
+[node name="Blade002" parent="Sketchfab_model/Root/Stuka/Spinner007" index="2"]
+transform = Transform3D(0.98906, 0, 0, 0, 0.97137, 0, 0, 0, 0.98906, 0.00636, -2.38419e-07, 0.0030601)
+visible = false
+
+[node name="Blade002_0" parent="Sketchfab_model/Root/Stuka/Spinner007/Blade002" index="0"]
+transform = Transform3D(1, 1.49012e-08, 4.28408e-08, -8.9407e-08, 1, 5.96046e-08, 1.39698e-08, -4.47035e-08, 1, -0.0774664, 0.0179958, 0.0664337)
+
+[node name="Blade002_1" parent="Sketchfab_model/Root/Stuka/Spinner007/Blade002" index="1"]
+transform = Transform3D(1, 1.49012e-08, 3.81842e-08, -2.98023e-08, 1, 2.98023e-08, 7.45058e-09, -1.49012e-08, 1, -0.0768462, 0.0178516, 0.0659018)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Sketchfab_model/Root/Stuka/Spinner007" index="3"]
+transform = Transform3D(1, 0, -7.12763e-14, 7.10543e-15, 1, 5.96046e-08, -7.41629e-14, 0, 1, -0.084341, 0.102694, 0.0459939)
+mesh = SubResource("CylinderMesh_c3p8s")
+
+[node name="Fuselage009_0" parent="Sketchfab_model/Root/Stuka/Fuselage009" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, -1.49012e-08, 1, 0, 0, 0)
+
+[node name="Exhaust_0" parent="Sketchfab_model/Root/Stuka/Exhaust" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, -1.49012e-08, 1, 0, 0, 0)
+
+[node name="Fuselage012_0" parent="Sketchfab_model/Root/Stuka/Fuselage012" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, -1.49012e-08, 1, 0, 0, 0)
+
+[node name="Fuselage012_1" parent="Sketchfab_model/Root/Stuka/Fuselage012" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, -1.49012e-08, 1, 0, 0, 0)
+
+[node name="Canopy002" parent="Sketchfab_model/Root/Stuka" index="40"]
+transform = Transform3D(1.06493, 0, 0, 0, 0.99806, 1.49012e-08, 0, 0, 1.02149, -0.00643, -2.5823, 0.0187601)
+
+[node name="Canopy002_0" parent="Sketchfab_model/Root/Stuka/Canopy002" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.49012e-08, 0, 0, 1, 0, 0, 0)
+
+[node name="Blade001" parent="Sketchfab_model/Root/Stuka" index="41"]
+transform = Transform3D(-0.860759, 0, 0.509012, 0, 1, 0, -0.509012, 0, -0.860759, -0.00643, -2.58007, 0.03205)
+
+[node name="AnimationPlayer" parent="." index="1"]
+speed_scale = 10.0
+
+[node name="Area3D" type="Area3D" parent="." index="2"]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 0.987767, -0.155935, -6.81612e-09, -0.155935, -0.987767, -4.31767e-08, 0, 0.949322, -0.0385785)
+shape = SubResource("CapsuleShape3D_47wnb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.961813, 0.273707, 0, -0.273707, 0.961813, 0.0301642, 1.05937, 0.487859)
+shape = SubResource("BoxShape3D_sblm2")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.699828, 0)
+stream = ExtResource("2_0mm4t")
+volume_db = -6.0
+max_distance = 200.0
+
+[node name="petit_feu" parent="." index="4" instance=ExtResource("3_wgxdl")]
+transform = Transform3D(0.015, 4.26325e-16, -1.86353e-23, 0, -6.55671e-10, -0.015, -4.26325e-16, 0.015, -6.55671e-10, 0.0476483, 0.0857911, -1.96784)
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

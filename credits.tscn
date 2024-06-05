@@ -1,0 +1,95 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdg6314aut0s0"]
+
+[ext_resource type="Script" path="res://credits.gd" id="1_3jcnw"]
+[ext_resource type="AudioStream" uid="uid://clkkkx4g436rc" path="res://son/end_song.mp3" id="2_v0dgr"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3jcnw")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -65.0
+offset_top = -31.0
+offset_right = 65.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "retour au menu
+"
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.86621, 0)
+text = "ville:
+\"WW2 - City Scene\"
+ (https://skfb.ly/6WTPG) by Robin Vandenberghe is licensed under Creative Commons Attribution
+ (http://creativecommons.org/licenses/by/4.0/).
+
+messershmit:
+\"messershmit Bf-109\" (https://skfb.ly/oNUIw) by adamero33susuwu33 is licensed under Creative Commons Attribution
+ (http://creativecommons.org/licenses/by/4.0/).
+
+stuka:
+This work is based on \"Junkers Ju 87 Stuka\"
+ (https://sketchfab.com/3d-models/junkers-ju-87-stuka-80fe9909938a44159d1906a81092c006) by
+
+ scorpion81 (https://sketchfab.com/scorpion81) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+
+bomber:
+\"Heinkel He 177 (low poly)\" (https://skfb.ly/oPDTU) by Götz von Berlichingen is licensed under Creative Commons Attribution 
+(http://creativecommons.org/licenses/by/4.0/).
+
+musiques d'ambiance :
+Sound Effect from 
+<a href=\"https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=6209\">
+
+Avec l'autorisation de @ambiencechannel / Kurtul Sükan:
+https://youtu.be/wKduUdwXLt0?si=ND19AlGeZZBY0l3R
+
+Son b29:
+https://youtu.be/gUXtlbQF4o0?si=Of_AxTD0EX7hHs6s 
+
+zepelin:
+\"L30 Airship\" (https://skfb.ly/ouPAs) by BocajLegMeat is licensed under Creative Commons Attribution
+ (http://creativecommons.org/licenses/by/4.0/).
+
+son clacson :
+Sound Effect from <a href=\"https://pixabay.com/sound-effects/>
+https://www.youtube.com/watch?v=7plOkiZKXKQ
+
+musique de game over: 
+Soundtrack composed by AIVA (Artificial Intelligence Virtual Artist): https://www.aiva.ai
+
+boss son :
+\"Makai Symphony - Dragon Castle\" is under a Creative Commons license (CC BY-SA 3.0).
+Musique promue par BreakingCopyright: https://bit.ly/b-dragon-castle
+
+textures : http://www.cgtextures.com/
+
+Image menu : https://garystockbridge617.getarchive.net/
+
+War by GoSoundtrack http://www.gosoundtrack.com
+Creative Commons — Attribution 4.0 International — CC BY 4.0
+Free Download / Stream: http://bit.ly/gosoundtrack-war
+Music promoted by Audio Library https://youtu.be/1T-UBUryLTQ
+
+Asset : https://celyanae.itch.io/metallic-buttons/download/
+eyJpZCI6MjY2MzI5NywiZXhwaXJlcyI6MTcxNjQ4MjU4MX0%3d.hVNmtlgoaeNzMK6mDMyBTg%2b0z%2fM%3d"
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.38478)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_v0dgr")
+volume_db = -6.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
