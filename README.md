@@ -1,4 +1,4 @@
-# ✈️ Avion Combat
+# Combat d'Avion
 
 A 3D airplane combat game built with Godot Engine 4.0. This is one of my first projects using Godot for 3D game development.
 
@@ -10,7 +10,7 @@ A 3D airplane combat game built with Godot Engine 4.0. This is one of my first p
 
 Avion Combat is a 3D aerial combat game where you pilot a warplane through various missions and survival challenges. Engage in intense dogfights against enemy aircraft including Stukas, Messerschmitts, and bombers while defending your territory.
 
-## 🎯 Features
+## Features
 
 - **Multiple Game Modes**
   - Story Mode with 4 different levels
@@ -31,13 +31,13 @@ Avion Combat is a 3D aerial combat game where you pilot a warplane through vario
   - Simple and responsive flight controls
   - Combat mechanics
 
-## 🛠️ Built With
+## Built With
 
 - **Engine**: Godot 4.0
 - **Language**: GDScript
 - **Graphics**: 3D Forward+ Renderer
 
-## 🚀 Development
+## Development
 
 This project represents one of my first explorations into 3D game development with Godot Engine. It features:
 
@@ -46,11 +46,12 @@ This project represents one of my first explorations into 3D game development wi
 - Multiple scene management
 - UI systems for menus and game states
 
-## 📝 License
+## License
 
 This project is available for personal use and gameplay.
+so MIT
 
-## 🎮 Controls
+## Controls
 
 - Use keyboard controls to pilot your aircraft
 - Press `ESC` for pause menu
