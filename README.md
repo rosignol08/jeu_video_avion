@@ -2,11 +2,11 @@
 
 A 3D airplane combat game built with Godot Engine 4.0. This is one of my first projects using Godot for 3D game development.
 
-## 🎮 Play the Game
+## Play the Game
 
 **[Play on itch.io](https://rosignol.itch.io/my-first-godot-game)**
 
-## 📖 About
+## About
 
 Avion Combat is a 3D aerial combat game where you pilot a warplane through various missions and survival challenges. Engage in intense dogfights against enemy aircraft including Stukas, Messerschmitts, and bombers while defending your territory.
 
